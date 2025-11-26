@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/32</span>
+                <span class='fraction'>32/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">68.42% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>13/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/32</span>
+                <span class='fraction'>32/32</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -95,70 +95,70 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >import { getJSON } from "./storage";</span></span></span>
-<span class="cstat-no" title="statement not covered" >import { readUsers } from "./registro";</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >// Basic admin detection strategy:</span>
-<span class="cstat-no" title="statement not covered" >// 1) Hardcoded primary admin email</span>
-<span class="cstat-no" title="statement not covered" >// 2) If a user exists in localStorage key 'usuarios' with rol 'Administrador' matching the email</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >const PRIMARY_ADMIN_EMAIL = "pasteleriamilsabores.fm@gmail.com";</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >function isAdminRole(role?: string | null): boolean {</span>
-<span class="cstat-no" title="statement not covered" >  const r = String(role || '').toLowerCase();</span>
-<span class="cstat-no" title="statement not covered" >  return r === 'administrador' || r === 'superadmin';</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export function isAdminEmail(email?: string | null): boolean {</span>
-<span class="cstat-no" title="statement not covered" >  if (!email) return false;</span>
-<span class="cstat-no" title="statement not covered" >  const e = String(email).toLowerCase();</span>
-<span class="cstat-no" title="statement not covered" >  if (e === PRIMARY_ADMIN_EMAIL) return true;</span>
-<span class="cstat-no" title="statement not covered" >  // 1) Check registered users store (authoritative for login accounts)</span>
-<span class="cstat-no" title="statement not covered" >  const users = readUsers();</span>
-<span class="cstat-no" title="statement not covered" >  const found = users.find(u =&gt; String(u.email || '').toLowerCase() === e);</span>
-<span class="cstat-no" title="statement not covered" >  if (found &amp;&amp; isAdminRole((found as any).role)) return true;</span>
-<span class="cstat-no" title="statement not covered" >  // 2) Fallback: check legacy 'usuarios' store used by admin UI</span>
-<span class="cstat-no" title="statement not covered" >  try {</span>
-<span class="cstat-no" title="statement not covered" >    const usuarios = getJSON&lt;any[]&gt;("usuarios") || [];</span>
-<span class="cstat-no" title="statement not covered" >    const legacy = usuarios.find((u) =&gt; String(u.correo || "").toLowerCase() === e);</span>
-<span class="cstat-no" title="statement not covered" >    if (legacy &amp;&amp; isAdminRole(legacy.rol)) return true;</span>
-<span class="cstat-no" title="statement not covered" >  } catch {}</span>
-<span class="cstat-no" title="statement not covered" >  return false;</span>
-<span class="cstat-no" title="statement not covered" >}</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >export default { isAdminEmail };</span>
+<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { getJSON } from "./storage";
+import { readUsers } from "./registro";
+&nbsp;
+// Basic admin detection strategy:
+// 1) Hardcoded primary admin email
+// 2) If a user exists in localStorage key 'usuarios' with rol 'Administrador' matching the email
+&nbsp;
+const PRIMARY_ADMIN_EMAIL = "pasteleriamilsabores.fm@gmail.com";
+&nbsp;
+function isAdminRole(role?: string | null): boolean {
+  const r = String(<span class="branch-0 cbranch-no" title="branch not covered" >role || '')</span>.toLowerCase();
+  return r === <span class="branch-0 cbranch-no" title="branch not covered" >'administrador' || r === 'superadmin';</span>
+}
+&nbsp;
+export function isAdminEmail(email?: string | null): boolean {
+  if (!email) <span class="branch-0 cbranch-no" title="branch not covered" >return false;</span>
+  const e = String(email).toLowerCase();
+  if (e === PRIMARY_ADMIN_EMAIL) return true;
+  // 1) Check registered users store (authoritative for login accounts)
+  const users = readUsers();
+  const found = users.find(u =&gt; String(u.<span class="branch-0 cbranch-no" title="branch not covered" >email || '')</span>.toLowerCase() === e);
+  if (found &amp;&amp; isAdminRole((found as any).role)) return true;
+  // 2) Fallback: check legacy 'usuarios' store used by admin UI
+  try {
+    const usuarios = getJSON&lt;any[]&gt;("usuarios") || [];
+    const legacy = usuarios.find((u) =&gt; String(u.<span class="branch-0 cbranch-no" title="branch not covered" >correo || "")</span>.toLowerCase() === e);
+    if (legacy &amp;&amp; isAdminRole(legacy.rol)) return true;
+<span class="branch-0 cbranch-no" title="branch not covered" >  } catch {}</span>
+  return false;
+}
+&nbsp;
+export default { isAdminEmail };
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -166,7 +166,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-11-12T17:57:50.485Z
+                at 2025-11-26T17:31:13.445Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
